@@ -27,6 +27,12 @@
             </el-submenu>
           </template>
         </router-link>
+            <el-sub-menu index="1">
+              <template #title>导出</template>
+              <el-button onclick="">导出回测结果</el-button>
+              <el-button>导出仓位详情</el-button>
+              <el-button>导出交易详情</el-button>
+            </el-sub-menu>
       </el-menu>
     </el-col>
   </el-row>
@@ -61,6 +67,33 @@ export default {
     };
   }
 };
+function exportCsv(bk){
+        //title ["","",""]
+        let len=bk.benchmark_earn.length;
+        //titleForKey ["","",""]
+        let title=['time','benchmark','Balance','earn','lose','sell','buy']
+        var str = [];
+        str.push(title.join(",")+"\n");
+        for(var i=0;i<len;i++){
+            var temp = [];
+            temp.push(bk.time[i]);
+            temp.push(bk.benchmark_earn[i].value);
+            temp.push((1+0.01*bk.algo_earn[i].value)*100000)
+            temp.push(bk.daily_profit[i].value);
+            temp.push(bk.daily_loss[i].value);
+            temp.push(bk.daily_sell[i].value);
+            temp.push(bk.daily_buy[i].value);
+         str.push(temp.join(",")+"\n");
+     }
+     var uri = 'data:text/csv;charset=utf-8,' + encodeURIComponent(str.join(""));  
+     var downloadLink = document.createElement("a");
+     downloadLink.href = uri;
+     downloadLink.download = "export.csv"; 
+     app.appendChild(downloadLink);
+     downloadLink.click();
+     app.removeChild(downloadLink); 
+  }
+
 </script>
 
 <style scoped>
