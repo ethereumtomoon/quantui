@@ -16,7 +16,7 @@
 </template>
 <script setup>
     function postData() {  
-        var url = "101.34.239.153:8088/backtestResult/tradeDetail/";  
+        var url = "101.34.239.153:8118/backtestResult/tradeDetail/";  
         var data = {'backtest_id':"57280c6d5232446591b27d30d656689b",offset:0,length:2000};  
         var xhr = new XMLHttpRequest();  
         xhr.open("POST", url, true);  

@@ -93,7 +93,69 @@ function exportCsv(bk){
      downloadLink.click();
      app.removeChild(downloadLink); 
   }
-
+  function exporttransaction(transactions){
+    var title = transactions.title;
+    //titleForKey ["","",""]
+    var titleForKey = ['_trade_datetime','security_type','trade_security','trade_type','order_type','order_volume','trade_price','trade_amount','commission'];
+    //var title=['时间',]
+    var data = transactions.results;
+    var str = [];
+    str.push(titleForKey.join(",")+"\n");
+    for(var i=0;i<data.length;i++){
+        var temp = [];
+        for(var j=0;j<titleForKey.length;j++){
+            temp.push(data[i][titleForKey[j]]);
+     }
+     str.push(temp.join(",")+"\n");
+    }
+    var uri = 'data:text/csv;charset=utf-8,' + encodeURIComponent(str.join(""));  
+     var downloadLink = document.createElement("a");
+     downloadLink.href = uri;
+     downloadLink.download = "export.csv"; 
+     app.appendChild(downloadLink);
+     downloadLink.click();
+     app.removeChild(downloadLink); 
+  }
+  function exportposition(position){
+    var titleForKey = ['security_name','close_price','security_name','security_type','daily_gains','position_size','position_value','position_percent','avg_cost'];
+    var data = position.results;
+    var str = [];
+    str.push(titleForKey.join(",")+"\n");
+    for(var i=0;i<data.length;i++){
+        var temp = [];
+        for(var j=0;j<titleForKey.length;j++){
+            temp.push(data[i][titleForKey[j]]);
+     }
+     str.push(temp.join(",")+"\n");
+    }    
+  }
+/*  {
+                "_create_time": "2023-07-17 15:43:51",
+                "_date": null,
+                "_update_time": null,
+                "avg_cost": 0.0,
+                "backtest_id": "57280c6d5232446591b27d30d656689b",
+                "close_price": 0.0,
+                "closeable_amount": 0.0,
+                "daily_gains": 0.0,
+                "daily_gains_percent": null,
+                "date_time": 1491350400000,
+                "gain": "0",
+                "gain_percent": "0",
+                "host_cost": 0.0,
+                "id": 52911,
+                "is_valid": true,
+                "position_info_id": "b1b610c37f77493cbb82272be4d2203f",
+                "position_percent": 0.0,
+                "position_size": 0.0,
+                "position_value": 0.0,
+                "security_code": "sz300013",
+                "security_deposit": null,
+                "security_name": "新宁物流",
+                "security_type": "STOCK",
+                "side": 1,
+                "total_value": 1000000.0
+            }*/
 </script>
 
 <style scoped>
