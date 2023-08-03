@@ -12,6 +12,8 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
+    "brython-runner": "^1.0.10",
+    "Console": "^1.1.0",
     "core-js": "^3.8.3",
     "csvtojson": "^2.0.10",
     "echarts": "^5.4.3",
@@ -21,9 +23,11 @@
     "navigation-drawer": "^1.0.15",
     "vue": "^3.3.4",
     "vue-cli": "^2.9.6",
+    "vue-pythonpad-runner": "^1.0.2",
     "vue-router": "^4.2.4",
     "vue3-table": "^1.0.0",
-    "vuetify": "^3.3.9"
+    "vuetify": "^3.3.9",
+    "webpack": "^5.88.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

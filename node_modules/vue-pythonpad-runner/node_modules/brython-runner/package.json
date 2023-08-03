@@ -1,0 +1,37 @@
+{
+  "name": "brython-runner",
+  "version": "1.0.10",
+  "description": "Brython based Python code runner for web clients.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pythonpad/brython-runner.git"
+  },
+  "homepage": "https://github.com/pythonpad/brython-runner#readme",
+  "scripts": {
+    "dev": "./node_modules/.bin/gulp dev",
+    "build": "./node_modules/.bin/gulp build"
+  },
+  "author": "Jeongmin Byun",
+  "license": "MIT",
+  "devDependencies": {
+    "3": "^2.1.0",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0",
+    "yargs": "^15.3.1"
+  },
+  "dependencies": {
+    "brython": "3.8.10",
+    "raw-loader": "^4.0.1"
+  }
+}

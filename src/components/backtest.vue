@@ -1,10 +1,25 @@
 <template>
+  <el-cascader v-model="value" :options="options" @change="handleChange" />
   <div id="container1"></div>
   <div name="container2"></div>
   <div name="container3"></div>
 </template>
   
   <script setup defer="true">
+  let options=[
+    {        
+      value: '1d',
+      label: '1 Day'
+    },
+    {        
+      value: '4h',
+      label: '4 Hour'
+    },
+    {        
+      value: '1h',
+      label: '1 Hour'
+    },
+   ]
   import { createChart,CrosshairMode } from "lightweight-charts";
   //LightweightCharts=require('lightweight-charts')
   class Point{
@@ -32,7 +47,12 @@
       return times;
     }
   };
-  var app=document.getElementById('app')
+  var app=document.getElementById('main')
+  let child = app.firstChild;
+        while (child) {
+        app.removeChild(child);
+        child = app.firstChild
+        }
   var container1 = document.createElement('div');
   app.appendChild(container1);
   var container2 = document.createElement('div');
@@ -41,7 +61,7 @@
   app.appendChild(container3);
     // Async / await usage
   let a=document.getElementById('container1')
-  alert(a)
+  //alert(a)
   const jsdt=[{
     "state": "2",
     "result": {

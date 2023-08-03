@@ -29,6 +29,12 @@
         }  
     }  
     postData();
+    var app=document.getElementById('main')
+    let child = app.firstChild;
+        while (child) {
+        app.removeChild(child);
+        child = app.firstChild
+        }
     class Point{
     nowTime(format,date){  //时间转换格式
       let times;

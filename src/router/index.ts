@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import backtest from '../components/backtest.vue'
 import transactions from '../components/transactions.vue'
 import position from '../components/position.vue'
+import editor from '../components/pyeditor.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -24,7 +25,11 @@ const router = createRouter({
       name: "持仓详情",
       path: "/position",
       component: position
-    },  
+    }, {
+      name: "编辑器",
+      path: "/editor",
+      component: editor
+    }, 
   ]
 })
 

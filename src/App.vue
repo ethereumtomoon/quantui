@@ -1,19 +1,23 @@
 <template>
 
-  <navigation></navigation>
-  <router-view/>
+  <navigations  name="nav"></navigations>
+  <div id="main" style="height: 1200px; width:1500px">
+  <router-view/></div>
 </template>
 
 <script>
 import backtest from './components/backtest.vue'
-import navigation from './navigation.vue'
+import navigations from './navigation.vue'
+//import vr from 'vue-pythonpad-runner'
+console.log(navigations)
 export default {
   name: 'App',
   components: {
     backtest,
-    navigation
+    navigations
   }
 }
+
 </script>
 
 <style>
@@ -21,7 +25,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
