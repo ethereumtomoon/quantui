@@ -24752,7 +24752,7 @@
   const toolTipHeight = 80;
   const toolTipMargin = 15;
   const toolTip = document.createElement('div');
-  toolTip.style = `width: 156px; height: 120px; position: absolute; display: none; padding: 8px; box-sizing: border-box; font-size: 12px; text-align: left; z-index: 1000; top: 12px; left: 12px; pointer-events: none; border: 1px solid; border-radius: 2px;font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;`;
+  toolTip.style = `width: 156px; height: 400px; position: absolute; display: none; padding: 8px; box-sizing: border-box; font-size: 12px; text-align: left; z-index: 1000; top: 12px; left: 12px; pointer-events: none; border: 1px solid; border-radius: 2px;font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;`;
   toolTip.style.background = 'white';
   toolTip.style.color = 'black';
   toolTip.style.borderColor = 'rgba(0, 150, 136, 1)';
@@ -24760,8 +24760,9 @@
   
   // update tooltip
   overallreturnchart.subscribeCrosshairMove(param => {
-    console.log(param.point,container1.clientWidth)
-    let r=param.seriesData.values().next().value
+    let p=param.seriesData.values()
+    let r=p.next().value
+    let r2=p.next().value
     console.log(param.seriesData,r)
     if (
       param.point === undefined ||
@@ -24778,10 +24779,14 @@
       const dateStr = r.time;
       toolTip.style.display = 'block';
       const data = r;//param.seriesData.get(series);
+      const data2=r2;
       const price = data.value !== undefined ? data.value : data.close;
+      const price2 = data2.value !== undefined ? data2.value : data2.close;
      console.log(price)		
      toolTip.innerHTML = `<div style="color: ${'rgba(0, 150, 136, 1)'}">收益率</div><div style="font-size: 24px; margin: 4px 0px; color: ${'black'}">
         ${Math.round(100 * price) / 100}%
+        </div><div style="color: ${'rgba(0, 150, 136, 1)'}">超额收益率</div><div style="font-size: 24px; margin: 4px 0px; color: ${'black'}">
+        ${Math.round(100 * price2) / 100}%
         </div><div style="color: ${'black'}">
         ${dateStr}
         </div>`;
