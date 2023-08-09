@@ -127,6 +127,12 @@ export default {
           name: "编辑器",
           path: "/editor",
           children: [{ path: "/editor", name: "编辑器" }]
+        },
+        {
+          icon: "fa-asterisk",
+          name: "用户信息",
+          path: "/user",
+          children: [{ path: "/user", name: "用户信息" }]
         }
       ]
     };
@@ -202,6 +208,7 @@ export default {
               <el-button @click="postData('positionInfo','57280c6d5232446591b27d30d656689b')">导出仓位详情</el-button>
               <el-button @click="postData('tradeDetail','57280c6d5232446591b27d30d656689b')">导出交易详情</el-button>
             </el-sub-menu>
+
       </el-menu>
     </el-col>
   </el-row>
