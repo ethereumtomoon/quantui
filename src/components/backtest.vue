@@ -24547,6 +24547,7 @@
       return ans
   } 
   let benchmark=[]
+  let morereturn=[]
   let overallReturn=[]
   let lose=[]
   let earn=[]
@@ -24562,6 +24563,7 @@
         for(var i=0;i<len;i++){
             var temp = [];
             temp.push(benchmark[i]._internal_originalTime);
+            
             temp.push(benchmark[i].value);
             temp.push((1+0.01*overallReturn[i].value)*100000)
             temp.push(earn[i].value);
@@ -24622,7 +24624,11 @@
     sell=sell.concat(tf(res.result.orders.sell))
     buy=buy.concat(tf(res.result.orders.buy))
   }
-  
+  for (var i=0;i<benchmark.length;i++){
+    let t=(1+overallReturn[i].value*0.01)/(1+benchmark[i].value*0.01)*100
+    morereturn.push({"time":overallReturn[i].time,"value":t})
+  }
+  console.log(morereturn)
   var overallreturnchart = createChart(container1, {
     width: 800,
     height: 500,
@@ -24655,6 +24661,10 @@
     color: 'rgba(0, 252, 0, 1)',
     lineWidth: 2,
   });
+  var morereturnlines = overallreturnchart.addLineSeries({
+    color: 'rgba(252, 0, 0, 1)',
+    lineWidth: 2,
+  });  
   var BMlines = overallreturnchart.addAreaSeries({
     topColor: 'rgba(33, 150, 243, 0.56)',
     bottomColor: 'rgba(33, 150, 243, 0.04)',
@@ -24663,6 +24673,8 @@
   }).setData(benchmark)
   
   var ret=overallreturnlines.setData(overallReturn)
+  //print(morereturn)
+  var more=morereturnlines.setData(morereturn)
   var gainschart = createChart(container2, {
     width: 800,
     height: 500,

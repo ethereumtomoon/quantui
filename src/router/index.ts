@@ -4,6 +4,8 @@ import backtest from '../components/backtest.vue'
 import transactions from '../components/transactions.vue'
 import position from '../components/position.vue'
 import editor from '../components/pyeditor.vue'
+import login from '../pages/Login.vue'
+import register from '../pages/Register.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -29,7 +31,15 @@ const router = createRouter({
       name: "编辑器",
       path: "/editor",
       component: editor
-    }, 
+    }, {
+      name: "登录",
+      path: "/login",
+      component: login
+    },{
+      name: "注册",
+      path: "/register",
+      component: register
+    },
   ]
 })
 
