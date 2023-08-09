@@ -111,8 +111,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.login { position:fixed; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #000 url(../../static/img/bg.png) no-repeat center / cover;}
-.login .box {text-align:center; box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden;}
+.login { position:fixed; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #ffffff url(../../static/img/bg.png) no-repeat center / cover;}
+.login .box {text-align:center; box-shadow: 0px 0px 50px 0px rgba(3, 219, 226, 0.5); border-radius: 20px; overflow: hidden;}
 .login .box .form-box {width: 600px; height: 100%; background: #fff; padding: 50px 70px 0; display: flex; flex-direction: column; align-items: center;}
 .login .box .form-box li input {width: 222px; height: 36px; border: 1px solid #dfdcdb; border-top-width: 3px; border-bottom-width: 2px; border-radius: 4px; background: #fcfafafa; padding: 0 10px;}
 .login .box .form-box li {width: 222px; margin-bottom: 38px; position: relative;}
