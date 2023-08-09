@@ -168,7 +168,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.register {position:fixed; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #000 url(../../static/img/bg.png) no-repeat center / cover;}
+.register {position:fixed; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #ffffff url(../../static/img/bg.png) no-repeat center / cover;}
 .register .box {text-align:center; box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.5); border-radius: 20px; overflow: hidden;}
 .register .box .form-box {width: 600px; height: 100%; background: #fff; padding: 50px 70px 10px; display: flex; flex-direction: column; align-items: center;}
 .register .box .form-box li input {width: 222px; height: 36px; border: 1px solid #dfdcdb; border-top-width: 3px; border-bottom-width: 2px; border-radius: 4px; background: #fcfafafa; padding: 0 10px;}
