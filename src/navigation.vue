@@ -1,5 +1,6 @@
 
 <script>
+import { Delete, Edit, Search, Share, Upload } from '@element-plus/icons-vue'
 import backtest from './components/backtest.vue'
 console.log(app)
 
@@ -208,7 +209,11 @@ export default {
               <el-button @click="postData('positionInfo','57280c6d5232446591b27d30d656689b')">导出仓位详情</el-button>
               <el-button @click="postData('tradeDetail','57280c6d5232446591b27d30d656689b')">导出交易详情</el-button>
             </el-sub-menu>
-
+            <el-button @click=" getFile" style="margin-top: 10px"> 
+              Upload<el-icon class="el-icon--right" icon="Search"></el-icon>
+              </el-button>
+              <input type="file" ref="file" style="display: none;" v-on:change="handleFileUpload($event) ">
+              
       </el-menu>
     </el-col>
   </el-row>

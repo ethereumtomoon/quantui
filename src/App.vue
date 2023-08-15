@@ -15,7 +15,7 @@ export default {
   components: {
     backtest,
     navigations
-  }
+  },
 }
 
 </script>

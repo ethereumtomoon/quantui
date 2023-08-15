@@ -161,6 +161,7 @@ export default {
     }
   },
   mounted () {
+    console.log(SHA256)
     console.log(this.$SHA256('123456').toString())
   }
 }

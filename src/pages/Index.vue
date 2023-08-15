@@ -149,3 +149,4 @@ export default {
 
 <style scoped>
 .index {height: 100%;}
+</style>

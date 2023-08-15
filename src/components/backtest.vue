@@ -24630,12 +24630,12 @@
   }
   console.log(morereturn)
   var overallreturnchart = createChart(container1, {
-    width: 800,
+    width: 1600,
     height: 500,
     layout: {
       background: {
               type: 'solid',
-              color: '#000000',
+              color: '#ffffff',
           },
       textColor: 'rgba(255, 255, 255, 0.9)',
     },
@@ -24658,11 +24658,11 @@
     },
   });
   var overallreturnlines = overallreturnchart.addLineSeries({
-    color: 'rgba(0, 252, 0, 1)',
+    color: 'rgba(0, 202, 0, 1)',
     lineWidth: 2,
   });
   var morereturnlines = overallreturnchart.addLineSeries({
-    color: 'rgba(252, 0, 0, 1)',
+    color: 'rgba(198, 0, 0, 1)',
     lineWidth: 2,
   });  
   var BMlines = overallreturnchart.addAreaSeries({
@@ -24676,12 +24676,12 @@
   //print(morereturn)
   var more=morereturnlines.setData(morereturn)
   var gainschart = createChart(container2, {
-    width: 800,
+    width: 1600,
     height: 500,
     layout: {
       background: {
               type: 'solid',
-              color: '#000000',
+              color: '#ffffff',
           },
       textColor: 'rgba(255, 255, 255, 0.9)',
     },
@@ -24704,20 +24704,20 @@
     },
   });
   var earnlines = gainschart.addLineSeries({
-    color: 'rgba(0, 252, 0, 1)',
+    color: 'rgba(0, 202, 0, 1)',
     lineWidth: 2,
   }).setData(earn)
   var loselines = gainschart.addLineSeries({
-    color: 'rgba(252, 0, 0, 1)',
+    color: 'rgba(202, 0, 0, 1)',
     lineWidth: 2,
   }).setData(lose)
   var orderschart = createChart(container3, {
-    width: 800,
+    width: 1600,
     height: 500,
     layout: {
       background: {
               type: 'solid',
-              color: '#000000',
+              color: '#ffffff',
           },
       textColor: 'rgba(255, 255, 255, 0.9)',
     },
@@ -24740,11 +24740,11 @@
     },
   });
   var buylines = orderschart.addHistogramSeries({
-    color: 'rgba(0, 252, 0, 1)',
+    color: 'rgba(0, 202, 0, 1)',
     lineWidth: 2,
   }).setData(buy)
   var selllines = orderschart.addHistogramSeries({
-    color: 'rgba(252, 0, 0, 1)',
+    color: 'rgba(202, 0, 0, 1)',
     lineWidth: 2,
   }).setData(sell)
   console.log(benchmark)/**/

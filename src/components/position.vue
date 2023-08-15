@@ -1,40 +1,69 @@
 <template>
     <body>
-    <el-table :data="dt" style="width: 100%">
+    <el-table :data="position" :key="s0" style="width: 100%" height="1000">
         <el-table-column prop="position_value" label="持仓量" width="180" />
-        <el-table-column prop="date_time" label="日期" width="180"  />
+        <el-table-column prop="_date_time" label="日期" width="180"  />
         <el-table-column prop="close_price" label="当前价格"/>
         <el-table-column prop="gain" label="收益"/>
         <el-table-column prop="security_type" label="类型"/>
-        <el-table-column prop="trade_amount" label='成交额'/>
-        <el-table-column prop="trade_price" label='成交价'/>
+        <el-table-column prop="position_size" label='成交额'/>
         <el-table-column prop="security_name" label="品种" width="120" />
         <el-table-column prop="position_value" label="价值" width="120" />
         <el-table-column prop="position_size" label="持仓数量"/>   
     </el-table>
     </body>
 </template>
-<script setup>
-    function postData() {  
-        var url = "101.34.239.153:8088/backtestResult/tradeDetail/<backtest_id> ";  
-        var data = {'backtest_id':"57280c6d5232446591b27d30d656689b",offset:0,length:2000};  
-        var xhr = new XMLHttpRequest();  
-        xhr.open("POST", url, true);  
-        xhr.setRequestHeader("Content-Type", "application/json");  
-        xhr.send(JSON.stringify(data));  
-        xhr.onreadystatechange = function() {  
-            if(xhr.readyState == 4 && xhr.status == 200) {  
-                console.log(xhr.responseText);  
-            }  
-        }  
-    }  
-    postData();
+<script>
+import {reactive} from "vue"
+var vm = new Vue({
+    el:"pos", 
+    data: {dt:reactive([])}
+});
+let position=reactive([]), s0=reactive(0) 
+
+function postData(r,id) { 
+
+var app=document.getElementById('main')
+  let child = app.firstChild;
+        while (child) {
+        app.removeChild(child);
+        child = app.firstChild
+        }
+var url = "http://101.34.239.153:8118/backtestResult/"+r+"/"+id;  
+var data = {'backtest_id':id,offset:0,length:2000};  
+var xhr = new XMLHttpRequest();  
+xhr.open("POST", url, true);  
+xhr.setRequestHeader("token", "19b05dd61f1c46e78667955ee016b7f4");  
+xhr.setRequestHeader("Access-Control-Allow-Origin","*")
+//xhr.send(JSON.stringify(data));  
+xhr.send(data)
+console.log(xhr)
+let n=1
+//while (xhr.readyState != 4)
+//    n=n+1
+
+xhr.onreadystatechange = function() {  
+    if(xhr.readyState == 4 && xhr.status == 200) {  
+        vm.dt=JSON.parse(xhr.responseText).data.results;        
+        console.log(vm.dt); 
+    }
+return xhr
+}  
+}
+export default{
+    setup(){
+    postData("positionInfo","57280c6d5232446591b27d30d656689b");
     var app=document.getElementById('main')
     let child = app.firstChild;
         while (child) {
         app.removeChild(child);
         child = app.firstChild
         }
+    return {
+        position,vm,s0
+    }
+}
+    }
     class Point{
     nowTime(format,date){  //时间转换格式
       let times;
@@ -61,293 +90,9 @@
     }
   };
   let tx = new Point();
-let position={
-        "offset": 10,
-        "results": [
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": 0.0,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": 0.0,
-                "closeable_amount": 0.0,
-                "daily_gains": 0.0,
-                "daily_gains_percent": null,
-                "date_time": 1491350400000,
-                "gain": "0",
-                "gain_percent": "0",
-                "host_cost": 0.0,
-                "id": 52911,
-                "is_valid": true,
-                "position_info_id": "b1b610c37f77493cbb82272be4d2203f",
-                "position_percent": 0.0,
-                "position_size": 0.0,
-                "position_value": 0.0,
-                "security_code": "sz300013",
-                "security_deposit": null,
-                "security_name": "新宁物流",
-                "security_type": "STOCK",
-                "side": 1,
-                "total_value": 1000000.0
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": null,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": null,
-                "closeable_amount": null,
-                "daily_gains": null,
-                "daily_gains_percent": null,
-                "date_time": 1491350400000,
-                "gain": null,
-                "gain_percent": null,
-                "host_cost": null,
-                "id": 52912,
-                "is_valid": true,
-                "position_info_id": "2b61c66c7ba94f0b91bb4eb3c213bf69",
-                "position_percent": null,
-                "position_size": null,
-                "position_value": 1000000.0,
-                "security_code": null,
-                "security_deposit": null,
-                "security_name": null,
-                "security_type": "Cash",
-                "side": 1,
-                "total_value": null
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": null,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": null,
-                "closeable_amount": null,
-                "daily_gains": 0.0,
-                "daily_gains_percent": null,
-                "date_time": 1491350400000,
-                "gain": "0",
-                "gain_percent": null,
-                "host_cost": null,
-                "id": 52913,
-                "is_valid": true,
-                "position_info_id": "930f12c3a1fe4a0589306794e4072a17",
-                "position_percent": null,
-                "position_size": null,
-                "position_value": 1000000.0,
-                "security_code": null,
-                "security_deposit": null,
-                "security_name": null,
-                "security_type": "Value",
-                "side": 1,
-                "total_value": null
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": 0.0,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": 0.0,
-                "closeable_amount": 0.0,
-                "daily_gains": 0.0,
-                "daily_gains_percent": null,
-                "date_time": 1491436800000,
-                "gain": "0",
-                "gain_percent": "0",
-                "host_cost": 0.0,
-                "id": 52914,
-                "is_valid": true,
-                "position_info_id": "ba35cb624e2540009508f60358f1cb6c",
-                "position_percent": 0.0,
-                "position_size": 0.0,
-                "position_value": 0.0,
-                "security_code": "sz300013",
-                "security_deposit": null,
-                "security_name": "新宁物流",
-                "security_type": "STOCK",
-                "side": 1,
-                "total_value": 1000000.0
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": null,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": null,
-                "closeable_amount": null,
-                "daily_gains": null,
-                "daily_gains_percent": null,
-                "date_time": 1491436800000,
-                "gain": null,
-                "gain_percent": null,
-                "host_cost": null,
-                "id": 52915,
-                "is_valid": true,
-                "position_info_id": "05db5999ecd44f12b563dba98ed29074",
-                "position_percent": null,
-                "position_size": null,
-                "position_value": 1000000.0,
-                "security_code": null,
-                "security_deposit": null,
-                "security_name": null,
-                "security_type": "Cash",
-                "side": 1,
-                "total_value": null
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": null,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": null,
-                "closeable_amount": null,
-                "daily_gains": 0.0,
-                "daily_gains_percent": null,
-                "date_time": 1491436800000,
-                "gain": "0",
-                "gain_percent": null,
-                "host_cost": null,
-                "id": 52916,
-                "is_valid": true,
-                "position_info_id": "ccdfc76bb8514ea9880876d20f2556c3",
-                "position_percent": null,
-                "position_size": null,
-                "position_value": 1000000.0,
-                "security_code": null,
-                "security_deposit": null,
-                "security_name": null,
-                "security_type": "Value",
-                "side": 1,
-                "total_value": null
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": 0.0,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": 0.0,
-                "closeable_amount": 0.0,
-                "daily_gains": 0.0,
-                "daily_gains_percent": null,
-                "date_time": 1491523200000,
-                "gain": "0",
-                "gain_percent": "0",
-                "host_cost": 0.0,
-                "id": 52917,
-                "is_valid": true,
-                "position_info_id": "9a1f83b9615d404a9652ed6272b4eb6a",
-                "position_percent": 0.0,
-                "position_size": 0.0,
-                "position_value": 0.0,
-                "security_code": "sz300013",
-                "security_deposit": null,
-                "security_name": "新宁物流",
-                "security_type": "STOCK",
-                "side": 1,
-                "total_value": 1000000.0
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": null,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": null,
-                "closeable_amount": null,
-                "daily_gains": null,
-                "daily_gains_percent": null,
-                "date_time": 1491523200000,
-                "gain": null,
-                "gain_percent": null,
-                "host_cost": null,
-                "id": 52918,
-                "is_valid": true,
-                "position_info_id": "3d44a731cabf470ab4c0bdee0ac0c7e6",
-                "position_percent": null,
-                "position_size": null,
-                "position_value": 1000000.0,
-                "security_code": null,
-                "security_deposit": null,
-                "security_name": null,
-                "security_type": "Cash",
-                "side": 1,
-                "total_value": null
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": null,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": null,
-                "closeable_amount": null,
-                "daily_gains": 0.0,
-                "daily_gains_percent": null,
-                "date_time": 1491523200000,
-                "gain": "0",
-                "gain_percent": null,
-                "host_cost": null,
-                "id": 52919,
-                "is_valid": true,
-                "position_info_id": "c44f9a0ec80f445ea61333409710d895",
-                "position_percent": null,
-                "position_size": null,
-                "position_value": 1000000.0,
-                "security_code": null,
-                "security_deposit": null,
-                "security_name": null,
-                "security_type": "Value",
-                "side": 1,
-                "total_value": null
-            },
-            {
-                "_create_time": "2023-07-17 15:43:51",
-                "_date": null,
-                "_update_time": null,
-                "avg_cost": 0.0,
-                "backtest_id": "57280c6d5232446591b27d30d656689b",
-                "close_price": 0.0,
-                "closeable_amount": 0.0,
-                "daily_gains": 0.0,
-                "daily_gains_percent": null,
-                "date_time": 1491782400000,
-                "gain": "0",
-                "gain_percent": "0",
-                "host_cost": 0.0,
-                "id": 52920,
-                "is_valid": true,
-                "position_info_id": "97fb446c5bb946a59de2c4f4e24ca0b5",
-                "position_percent": 0.0,
-                "position_size": 0.0,
-                "position_value": 0.0,
-                "security_code": "sz300013",
-                "security_deposit": null,
-                "security_name": "新宁物流",
-                "security_type": "STOCK",
-                "side": 1,
-                "total_value": 1000000.0
-            }
-        ]
-    }
-    for (let i=0;i<position.results.length;i++){
-        var d = new Date();
-        d.setTime(position.results[i].date_time)
-        var date0=d.toLocaleDateString()
-        position.results[i].date_time=tx.nowTime('yy-mm-dd',d)
-        if (position.results[i].security_type=='Cash')
-            position.results[i].security_name='现金'
-        if (position.results[i].security_type=='Value')
-            position.results[i].security_name='总额'
 
-    }
-    console.log(position.results)
+
+
 /*let col=[
     <el-table-column prop="_create_time" label='委托时间'/>
     <el-table-column prop="_trade_datetime" label="交易时间"/>
@@ -367,6 +112,11 @@ let position={
     <el-table-column prop="trade_type" label="交易类型"/>
     <el-table-column prop="trade_volume" label="成交量"/>
 ]*/
-let dt=position.results
+vm.$watch('dt', function (newValue, oldValue) {
+			// 这个回调将在 vm.kilometers 改变后调用
+            position=vm.dt
+        console.log(position)         
 
+        s0++
+		})
 </script>
