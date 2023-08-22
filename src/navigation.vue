@@ -15,7 +15,7 @@ var url = "http://101.34.239.153:8118/backtestResult/"+r+"/"+id;
 var data = {'backtest_id':id,offset:0,length:2000};  
 var xhr = new XMLHttpRequest();  
 xhr.open("POST", url, true);  
-xhr.setRequestHeader("token", "1d5cc1fe09fd4cca8769d6e5741fdde3");  
+xhr.setRequestHeader("token", "19b05dd61f1c46e78667955ee016b7f4");  
 xhr.setRequestHeader("Access-Control-Allow-Origin","*")
 //xhr.send(JSON.stringify(data));  
 xhr.send(data)
@@ -64,12 +64,12 @@ function exportCsv(bk){
 
 
 function exporttransaction(transaction){
-  console.log("111")
-  let title = transactions.title;
+  console.log(transaction)
+  let title = transaction.title;
   //titleForKey ["","",""]
   var titleForKey = ['_trade_datetime','security_type','trade_security','trade_type','order_type','order_volume','trade_price','trade_amount','commission'];
   //var title=['时间',]
-  var data = transactions.results;
+  var data = transaction.results;
   var str = [];
   str.push(titleForKey.join(",")+"\n");
   for(var i=0;i<data.length;i++){
@@ -87,7 +87,7 @@ function exporttransaction(transaction){
    downloadLink.click();
    app.removeChild(downloadLink); 
 }
-function exportposition(transaction){
+function exportposition(position){
     var titleForKey = ['security_name','close_price','security_name','security_type','daily_gains','position_size','position_value','position_percent','avg_cost'];
     var data = position.results;
     var str = [];
@@ -99,12 +99,25 @@ function exportposition(transaction){
      }
      str.push(temp.join(",")+"\n");
     }    
-}
+    var uri = 'data:text/csv;charset=utf-8,' + encodeURIComponent(str.join(""));  
+   var downloadLink = document.createElement("a");
+   downloadLink.href = uri;
+   downloadLink.download = "export.csv"; 
+   app.appendChild(downloadLink);
+   downloadLink.click();
+   app.removeChild(downloadLink); 
+  }
 export default {
   name: "navigations",
   data() {
     return {
       items: [
+        {
+          icon: "fa-asterisk",
+          name: "公开策略",
+          path: "/user",
+          children: [{ path: "/user", name: "公开策略" }]
+        },
         {
           icon: "fa-money",
           name: "回测详情",

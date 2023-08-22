@@ -6,6 +6,35 @@
 </template>
   
   <script setup defer="true">
+  function postData(r,id) { 
+
+var app=document.getElementById('main')
+  let child = app.firstChild;
+        while (child) {
+        app.removeChild(child);
+        child = app.firstChild
+        }
+var url = "http://101.34.239.153:8118/backtestResult/"+r+"/"+id;  
+var data = {'axis':id,offset:0,length:2000};  
+var xhr = new XMLHttpRequest();  
+xhr.open("POST", url, true);  
+xhr.setRequestHeader("token", "19b05dd61f1c46e78667955ee016b7f4");  
+xhr.setRequestHeader("Access-Control-Allow-Origin","*")
+//xhr.send(JSON.stringify(data));  
+xhr.send(data)
+console.log(xhr)
+let n=1
+//while (xhr.readyState != 4)
+//    n=n+1
+
+xhr.onreadystatechange = function() {  
+    if(xhr.readyState == 4 && xhr.status == 200) {  
+        vm.dt=JSON.parse(xhr.responseText).data.results;        
+        console.log(vm.dt); 
+    }
+return xhr
+}  
+}
   let options=[
     {        
       value: '1d',
@@ -47,21 +76,6 @@
       return times;
     }
   };
-  var app=document.getElementById('main')
-  let child = app.firstChild;
-        while (child) {
-        app.removeChild(child);
-        child = app.firstChild
-        }
-  var container1 = document.createElement('div');
-  app.appendChild(container1);
-  var container2 = document.createElement('div');
-  app.appendChild(container2);
-  var container3 = document.createElement('div');
-  app.appendChild(container3);
-    // Async / await usage
-  let a=document.getElementById('container1')
-  //alert(a)
   const jsdt=[{
     "state": "2",
     "result": {
@@ -24530,10 +24544,8 @@
     },
     "userRecord": null
   }
-  ]
-  
-  let tx = new Point();
-  var v=[]
+  ]  
+
   function tf(ls) {
       let ans=[]
       for (var i=0;i<ls.time.length;i++){
@@ -24545,7 +24557,27 @@
         //console.log(n,benchmark[i].value)
       }
       return ans
-  } 
+  }   
+  var app=document.getElementById('main')
+  let child = app.firstChild;
+        while (child) {
+        app.removeChild(child);
+        child = app.firstChild
+        }
+  var container1 = document.createElement('div');
+  app.appendChild(container1);
+  var container2 = document.createElement('div');
+  app.appendChild(container2);
+  var container3 = document.createElement('div');
+  app.appendChild(container3);
+    // Async / await usage
+  let a=document.getElementById('container1')
+  //alert(a)
+
+  
+  let tx = new Point();
+  var v=[]
+
   let benchmark=[]
   let morereturn=[]
   let overallReturn=[]
@@ -24553,33 +24585,7 @@
   let earn=[]
   let buy=[]
   let sell=[] 
-  function exportCsv(){
-        //title ["","",""]
-        let len=benchmark.length;
-        //titleForKey ["","",""]
-        let title=['time','benchmark','Balance','earn','lose','sell','buy']
-        var str = [];
-        str.push(title.join(",")+"\n");
-        for(var i=0;i<len;i++){
-            var temp = [];
-            temp.push(benchmark[i]._internal_originalTime);
-            
-            temp.push(benchmark[i].value);
-            temp.push((1+0.01*overallReturn[i].value)*100000)
-            temp.push(earn[i].value);
-            temp.push(lose[i].value);
-            temp.push(sell[i].value);
-            temp.push(buy[i].value);
-         str.push(temp.join(",")+"\n");
-     }
-     var uri = 'data:text/csv;charset=utf-8,' + encodeURIComponent(str.join(""));  
-     var downloadLink = document.createElement("a");
-     downloadLink.href = uri;
-     downloadLink.download = "export.csv"; 
-     app.appendChild(downloadLink);
-     downloadLink.click();
-     app.removeChild(downloadLink); 
-  }
+
 
   /*function exporttransaction(){
     var title = transactions.title;

@@ -2,7 +2,7 @@
     <el-form :model="form" label-width="120px">
       <el-form-item label="昵称">
         <el-text v-model="form.name" />
-        <el-button>登出</el-button>
+        <el-button @click="backtologin()">登出</el-button>
       </el-form-item>
       <el-form-item label="密码">
         <el-input v-model="form.pw" disabled/>
@@ -24,7 +24,16 @@
 </template>
 <script setup>
 import { reactive } from 'vue'
-
+//import {router} from '../router/index.ts'
+var app=document.getElementById('main')
+function backtologin(){
+    this.$router.push(`/login`)
+}
+let child = app.firstChild;
+        while (child) {
+        app.removeChild(child);
+        child = app.firstChild
+        }
 // do not use same name with ref
 const form = reactive({
   name: 'Username',
@@ -41,7 +50,8 @@ import { ref } from 'vue'
 const psw1 = ref('')
 const psw2=ref('')
 const changepassword=()=>{
-    if (psw1==psw2)
+    console.log(psw1._value)
+    if (psw1._value==psw2._value)
         alert("已更新密码")
     else alert("两次输入不一致，请重新输入")
 }

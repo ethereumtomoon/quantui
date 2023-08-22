@@ -32,7 +32,7 @@ router.beforeEach((to, from, next) => {
     }
   })
   
-  const store = new vuex.Store({
+/*  const store = new vuex.Store({
     state: {
       username: ''
     },
@@ -44,7 +44,7 @@ router.beforeEach((to, from, next) => {
     getters: { // 实时监听state值的变化(最新状态)
       username (state) { // 方法名随意,主要是来承载变化的showFooter的值
         return state.username
-      }
+      
     }
-  })
+  })*/
   

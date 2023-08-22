@@ -8,6 +8,7 @@ import login from '../pages/Login.vue'
 import register from '../pages/Register.vue'
 import index from '../pages/Index.vue'
 import user from '../pages/user.vue'
+import forum_pool from '../forum/pool/Pool.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -45,6 +46,10 @@ const router = createRouter({
       name: "用户信息",
       path: "/user",
       component: user
+    },{
+      name: "话题池",
+      path: "/forum/pool",
+      component: forum_pool
     },
   ]
 })
