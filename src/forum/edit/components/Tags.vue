@@ -10,31 +10,31 @@ interface Tag {
 const tags: Tag[] = [
   {
     index: 1,
-    name: '啊这可海星',
+    name: 'Topic1',
   },
   {
     index: 2,
-    name: '啊这可海星',
+    name: 'Topic2',
   },
   {
     index: 3,
-    name: '啊这可海星',
+    name: 'Topic3',
   },
   {
     index: 4,
-    name: '啊这可海星啊这可海星',
+    name: 'Topic4',
   },
   {
     index: 5,
-    name: '啊这可海星',
+    name: 'Topic5',
   },
   {
     index: 6,
-    name: '啊这可海星啊这可海星',
+    name: 'Topic6',
   },
   {
     index: 7,
-    name: '啊这可海星',
+    name: 'Topic7',
   },
 ]
 
@@ -142,7 +142,7 @@ const validateTagName = (tagName: string) => {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  border: 1px solid var(--kungalgame-blue-4);
+  border: 1px solid var(--forum-blue-4);
 }
 
 .tags-container {
@@ -151,7 +151,7 @@ const validateTagName = (tagName: string) => {
 }
 
 .selected-tag {
-  border: 1px solid var(--kungalgame-blue-1);
+  border: 1px solid var(--forum-blue-1);
   margin: 5px;
   display: flex;
   justify-content: center;
@@ -159,7 +159,7 @@ const validateTagName = (tagName: string) => {
   white-space: nowrap;
   font-size: 14px;
   padding: 3px;
-  background-color: var(--kungalgame-trans-red-1);
+  background-color: var(--forum-trans-red-1);
   span {
     cursor: pointer;
   }
@@ -171,7 +171,7 @@ const validateTagName = (tagName: string) => {
 
 /* 标签输入框 */
 .input {
-  background-color: var(--kungalgame-trans-white-9);
+  background-color: var(--forum-trans-white-9);
   /* 输入标签的字体 */
   font-size: 17px;
   flex-grow: 1;
@@ -180,16 +180,16 @@ const validateTagName = (tagName: string) => {
   padding: 5px;
   display: flex;
   min-width: 300px;
-  color: var(--kungalgame-font-color-3);
+  color: var(--forum-font-color-3);
   &:focus {
-    box-shadow: 0px 0px 5px var(--kungalgame-blue-4);
+    box-shadow: 0px 0px 5px var(--forum-blue-4);
   }
 }
 
 /* 提示 */
 .tips {
   font-size: small;
-  color: var(--kungalgame-font-color-1);
+  color: var(--forum-font-color-1);
 }
 
 .tags-info {
@@ -205,17 +205,17 @@ const validateTagName = (tagName: string) => {
 
 /* 单个标签的样式 */
 .tags > span {
-  border: 1px solid var(--kungalgame-blue-1);
+  border: 1px solid var(--forum-blue-1);
   margin: 5px;
   display: block;
   white-space: nowrap;
   font-size: 14px;
   padding: 3px;
-  background-color: var(--kungalgame-trans-blue-1);
+  background-color: var(--forum-trans-blue-1);
   cursor: pointer;
 }
 
 .tags > span:hover {
-  background-color: var(--kungalgame-trans-red-1);
+  background-color: var(--forum-trans-red-1);
 }
 </style>

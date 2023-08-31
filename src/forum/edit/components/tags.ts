@@ -7,30 +7,30 @@ export interface Tag {
 export const tag: Tag[] = [
   {
     index: 1,
-    name: '啊这可海星',
+    name: 'Topic2',
   },
   {
     index: 2,
-    name: '啊这可海星',
+    name: 'Topic2',
   },
   {
     index: 3,
-    name: '啊这可海星',
+    name: 'Topic2',
   },
   {
     index: 4,
-    name: '啊这可海星啊这可海星',
+    name: 'Topic2',
   },
   {
     index: 5,
-    name: '啊这可海星',
+    name: 'Topic2',
   },
   {
     index: 6,
-    name: '啊这可海星啊这可海星',
+    name: 'Topic2',
   },
   {
     index: 7,
-    name: '啊这可海星',
+    name: 'Topic2',
   },
 ]

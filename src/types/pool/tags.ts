@@ -8,42 +8,42 @@ interface tag {
 export const tags: tag[] = [
   {
     index: 1,
-    name: '啊这可海星',
+    name: 'LQ01',
   },
   {
     index: 2,
-    name: '啊这可海星',
+    name: 'LQ02',
   },
   {
     index: 3,
-    name: '啊这可海星',
+    name: 'LQ03',
   },
   {
     index: 4,
-    name: '啊这可海星啊这可海星',
+    name: 'LQ04',
   },
   {
     index: 5,
-    name: '啊这可海星',
+    name: 'LQ05',
   },
   {
     index: 6,
-    name: '啊这可海星啊这可海星',
+    name: 'LQ06',
   },
   {
     index: 7,
-    name: '啊这可海星',
+    name: 'LQ07',
   },
   {
     index: 8,
-    name: '啊这可海星啊这可',
+    name: 'LQ08',
   },
   {
     index: 9,
-    name: '啊这可海星',
+    name: 'LQ09',
   },
   {
     index: 10,
-    name: '啊这可海星',
+    name: 'LQ10',
   },
 ]

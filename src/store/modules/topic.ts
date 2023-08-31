@@ -19,7 +19,7 @@ interface Topic {
   tags: Tag[]
 }
 
-export const useKUNGalgameTopicStore = defineStore({
+export const useTopicStore = defineStore({
   id: 'topic',
   persist: true,
   state: (): Topic => ({

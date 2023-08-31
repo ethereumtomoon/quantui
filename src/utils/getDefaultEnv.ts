@@ -3,7 +3,7 @@
  */
 
 // 读取本地存储中的语言配置
-const localStorageString = localStorage.getItem('KUNGalgame-settings')
+const localStorageString = localStorage.getItem('forum-settings')
 
 // 这里是为了兼容各种浏览器，某些浏览器的 navigator.language 值为 'zh-CN'，会导致报错
 const getInitLanguage = () => {
@@ -19,8 +19,8 @@ const getInitLanguage = () => {
   }
 }
 
-export const KUNGalgameLanguage = localStorageString
-  ? JSON.parse(localStorageString).showKUNGalgameLanguage
+export const LQLanguage = localStorageString
+  ? JSON.parse(localStorageString).showLQLanguage
   : getInitLanguage()
 
 // 读取本地的白天黑夜模式，这个函数如果是黑夜模式的话会返回 true

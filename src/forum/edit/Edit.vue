@@ -3,7 +3,7 @@ import { reactive, ref } from 'vue'
 import WangEditor from '@/components/WangEditor.vue'
 import Tags from './components/Tags.vue'
 import Footer from './components/Footer.vue'
-import KUNGalgameFooter from '@/components/KUNGalgameFooter.vue'
+
 
 const emit = defineEmits(['tags', 'article'])
 
@@ -55,8 +55,8 @@ const submit = () => {
       </div>
     </div>
     <!-- 版权 -->
-    <KUNGalgameFooter style="margin: 0 auto" />
-    <span style="margin: 0 auto; color: var(--kungalgame-font-color-3)"
+    <Footer style="margin: 0 auto" />
+    <span style="margin: 0 auto; color: var(--forum-font-color-3)"
       >Editor powered by wangEditor</span
     >
   </div>
@@ -81,9 +81,9 @@ const submit = () => {
   margin: 0 auto;
   /* 容器的阴影 */
   box-shadow: var(--shadow);
-  background-color: var(--kungalgame-trans-white-2);
-  color: var(--kungalgame-font-color-3);
-  border: 1px solid var(--kungalgame-blue-1);
+  background-color: var(--forum-trans-white-2);
+  color: var(--forum-font-color-3);
+  border: 1px solid var(--forum-blue-1);
   padding: 10px;
 }
 
@@ -102,7 +102,7 @@ const submit = () => {
 
 /* 话题标题的输入框 */
 .title input {
-  color: var(--kungalgame-font-color-2);
+  color: var(--forum-font-color-2);
   /* 距离外轮廓的距离 */
   padding: 7px;
   /* 内边距盒子 */
@@ -110,14 +110,14 @@ const submit = () => {
   width: 100%;
   /* 标题输入字体大小 */
   font-size: 40px;
-  border: 1px solid var(--kungalgame-blue-4);
-  background-color: var(--kungalgame-white);
+  border: 1px solid var(--forum-blue-4);
+  background-color: var(--forum-white);
   margin-bottom: 10px;
 }
 
 /* 标题输入框 focus 之后的样式 */
 .title input:focus {
-  box-shadow: 0px 0px 5px var(--kungalgame-blue-4);
+  box-shadow: 0px 0px 5px var(--forum-blue-4);
 }
 
 .content-footer {

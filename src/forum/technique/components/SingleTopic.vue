@@ -9,6 +9,7 @@ const props = defineProps(['data'])
 <template>
   <!-- 单个话题 -->
   <div class="topic">
+  <router-link to="/forum/topic">
     <!-- 话题 hover 后的边 -->
     <span></span>
     <span></span>
@@ -23,11 +24,11 @@ const props = defineProps(['data'])
     <!-- 话题的状态 -->
     <div class="topic-status">
       <!-- 话题的点击数 -->
-      <div class="view"><Icon icon="ic:outline-remove-red-eye" />1007</div>
+      <div class="view"><Icon icon="ic:outline-remove-red-eye" />{{props.data.click}}</div>
       <!-- 话题的点赞数 -->
-      <div class="like"><Icon icon="line-md:thumbs-up-twotone" />1007</div>
+      <div class="like"><Icon icon="line-md:thumbs-up-twotone" />{{props.data.likes}}</div>
       <!-- 话题的回复数 -->
-      <div class="reply"><Icon icon="fa-regular:comment-dots" />1007</div>
+      <div class="reply"><Icon icon="fa-regular:comment-dots" />{{props.data.reply}}</div>
     </div>
     <!-- 话题的标签 -->
     <div class="topic-tags">
@@ -35,15 +36,16 @@ const props = defineProps(['data'])
       <!-- 单个标签 -->
       <span v-for="kun in props.data.topicTags">{{ kun }}</span>
     </div>
+  </router-link>
   </div>
 </template>
 
 <style lang="scss" scoped>
 /* 单个话题 */
 .topic {
-  border: 1px solid var(--kungalgame-trans-blue-4);
+  border: 1px solid var(--forum-trans-blue-4);
   border-radius: 5px;
-  background-color: var(--kungalgame-trans-white-2);
+  background-color: var(--forum-trans-white-2);
   /* 相对于底部状态的定位 */
   position: relative;
   display: inline-block;
@@ -72,7 +74,7 @@ const props = defineProps(['data'])
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--kungalgame-blue-4));
+  background: linear-gradient(90deg, transparent, var(--forum-blue-4));
   animation: animate1 1s linear infinite;
 }
 @keyframes animate1 {
@@ -90,7 +92,7 @@ const props = defineProps(['data'])
   right: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, var(--kungalgame-blue-4));
+  background: linear-gradient(180deg, transparent, var(--forum-blue-4));
   animation: animate2 1s linear infinite;
   animation-delay: 0.25s;
 }
@@ -108,7 +110,7 @@ const props = defineProps(['data'])
   bottom: 0;
   right: 0;
   width: 100%;
-  background: linear-gradient(270deg, transparent, var(--kungalgame-blue-4));
+  background: linear-gradient(270deg, transparent, var(--forum-blue-4));
   animation: animate3 1s linear infinite;
   animation-delay: 0.5s;
 }
@@ -129,7 +131,7 @@ const props = defineProps(['data'])
   left: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, var(--kungalgame-blue-4));
+  background: linear-gradient(360deg, transparent, var(--forum-blue-4));
   animation: animate4 1s linear infinite;
   animation-delay: 0.75s;
 }
@@ -173,7 +175,7 @@ const props = defineProps(['data'])
   align-items: center;
   /* 相对于话题绝对定位 */
   position: absolute;
-  background-color: var(--kungalgame-trans-white-2);
+  background-color: var(--forum-trans-white-2);
   bottom: 0;
   div {
     display: flex;
@@ -195,7 +197,7 @@ const props = defineProps(['data'])
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: var(--kungalgame-trans-white-9);
+  background-color: var(--forum-trans-white-9);
   /* 起初看不见文字 */
   opacity: 0;
   cursor: pointer;
@@ -208,12 +210,12 @@ const props = defineProps(['data'])
   position: absolute;
   left: 20px;
   font-size: 18px;
-  color: var(--kungalgame-red-4);
+  color: var(--forum-red-4);
   margin-right: 5px;
 }
 /* 单个话题 hover 时显示话题标签 */
 .topic:hover .topic-tags {
-  background-color: var(--kungalgame-trans-blue-0);
+  background-color: var(--forum-trans-blue-0);
   backdrop-filter: blur(5px);
   /* 放大、旋转回正 */
   transform: scale(1.1) rotate(-1deg);

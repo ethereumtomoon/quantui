@@ -9,17 +9,22 @@ interface Button {
 export const button: Button[] = [
   {
     index: 1,
-    name: 'galgame',
+    name: 'Sector1',
     isActive: ref(false),
   },
   {
     index: 2,
-    name: '技术交流',
+    name: 'Sector2',
     isActive: ref(false),
   },
   {
     index: 3,
-    name: '其它',
+    name: 'Sector3',
+    isActive: ref(false),
+  },
+  {
+    index: 4,
+    name: '其他',
     isActive: ref(false),
   },
 ]

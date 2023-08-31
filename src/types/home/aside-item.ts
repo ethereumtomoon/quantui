@@ -1,4 +1,4 @@
-/* 这是 KUNGalgame 主页侧边栏的单个项目内容 */
+/* 这是 Laoquant 主页侧边栏的单个项目内容 */
 
 // 单个项目的接口
 interface aside {

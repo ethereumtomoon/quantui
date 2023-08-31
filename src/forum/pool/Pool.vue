@@ -1,17 +1,9 @@
-<script setup lang="ts">
-import KUNGalgameSearchBox from '@/components/KUNGalgameSearchBox.vue'
-import Tags from './components/Tags.vue'
-import Topic from './components/Topic.vue'
-import Bar from './components/Bar.vue'
-
-import { topic } from './components/topic'
-</script>
 
 <template>
   <div class="pool">
     <!-- 话题池容器 -->
-    <div class="pool-container">
-      <KUNGalgameSearchBox style="width: 100%; height: 40px" />
+    <div class="pool-container" >
+      <SearchBox style="width: 100%; height: 40px" />
       <Tags />
 
       <div class="topic-container">
@@ -28,6 +20,13 @@ import { topic } from './components/topic'
     <Bar />
   </div>
 </template>
+<script setup lang="ts">
+import SearchBox from './components/SearchBox.vue'
+import Tags from './components/Tags.vue'
+import Topic from './components/Topic.vue'
+import Bar from './components/Bar.vue'
+import { topic } from './components/topic'
+</script>
 
 <style lang="scss" scoped>
 .pool {
@@ -49,7 +48,7 @@ import { topic } from './components/topic'
   flex-direction: column;
   /* 毛玻璃背景 */
   backdrop-filter: blur(5px);
-  background-color: var(--kungalgame-trans-white-5);
+  background-color: var(--forum-trans-white-5);
   padding: 5px;
 }
 

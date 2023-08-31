@@ -8,13 +8,15 @@
 <script>
 import backtest from './components/backtest.vue'
 import navigations from './navigation.vue'
+import Alert from '@/components/alert/Alert.vue'
 //import vr from 'vue-pythonpad-runner'
-console.log(navigations)
+console.log(Alert)
 export default {
   name: 'App',
   components: {
     backtest,
-    navigations
+    navigations,
+    Alert
   },
 }
 

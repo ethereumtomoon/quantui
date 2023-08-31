@@ -50,9 +50,9 @@ const buttonStatus = ref(false)
   width: 20%;
   font-size: 17px;
   cursor: pointer;
-  border: 1px solid var(--kungalgame-blue-1);
-  background-color: var(--kungalgame-trans-blue-0);
-  color: var(--kungalgame-blue-4);
+  border: 1px solid var(--forum-blue-1);
+  background-color: var(--forum-trans-blue-0);
+  color: var(--forum-blue-4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +61,7 @@ const buttonStatus = ref(false)
 /* 被选中按钮的样式 */
 .active {
   transition: 0.2s;
-  background-color: var(--kungalgame-blue-4);
-  color: var(--kungalgame-white);
+  background-color: rgb(17, 199, 231);//var(--forum-blue-4);
+  color: rgb(102, 120, 223)//var(--forum-white);
 }
 </style>

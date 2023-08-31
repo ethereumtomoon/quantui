@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import { ref } from 'vue'
 
-import { useKUNGalgameSettingsStore } from '@/store/modules/settings'
+import { useLQSettingsStore } from '@/store/modules/settings'
 import { storeToRefs } from 'pinia'
 import { randomNum } from '@/utils/random'
 import { onMounted, watch } from 'vue'
+import { Icon } from '@iconify/vue'
+import { ref } from 'vue'
 // 使用设置面板的 store
-const settingsStore = useKUNGalgameSettingsStore()
-const { showKUNGalgameMode } = storeToRefs(settingsStore)
+//const settingsStore = useLQSettingsStore()
+//const { showLQMode } = storeToRefs(settingsStore)
 
 const light = `rgba(${randomNum(200, 255)}, ${randomNum(200, 255)}, ${randomNum(
   200,
@@ -20,24 +20,24 @@ const dark = `rgba(${randomNum(0, 55)}, ${randomNum(0, 55)}, ${randomNum(
   55
 )}, ${randomNum(30, 70) / 100})`
 
-const color = ref(light)
+var color = ref(light)
 
 // 初始化色彩
-onMounted(() => {
-  if (showKUNGalgameMode.value === 'dark') {
+/*onMounted(() => {
+  if (showLQMode.value === 'dark') {
     color.value = dark
   } else {
     color.value = light
   }
 
-  watch(showKUNGalgameMode, () => {
-    if (showKUNGalgameMode.value === 'dark') {
+  watch(showLQMode, () => {
+    if (showLQMode.value === 'dark') {
       color.value = dark
     } else {
       color.value = light
     }
   })
-})
+})*/
 
 const props = defineProps(['data', 'itemStyle'])
 
@@ -81,14 +81,14 @@ const props = defineProps(['data', 'itemStyle'])
   flex-direction: column;
   /* Scss random color */
   background-color: v-bind(color);
-  border: 1px solid var(--kungalgame-blue-1);
-  color: var(--kungalgame-font-color-3);
+  border: 1px solid var(--forum-blue-1);
+  color: var(--forum-font-color-3);
   cursor: pointer;
   box-shadow: var(--shadow);
   max-width: 300px;
 }
 .topic:hover {
-  background-color: var(--kungalgame-trans-white-2);
+  background-color: var(--forum-trans-white-2);
 }
 /* 话题的标题 */
 .title {
@@ -103,7 +103,7 @@ const props = defineProps(['data', 'itemStyle'])
   margin-top: 7px;
   padding: 0 7px;
   font-weight: bold;
-  color: var(--kungalgame-font-color-2);
+  color: var(--forum-font-color-2);
   flex-shrink: 0;
 }
 /* 话题的内容区 */
@@ -128,7 +128,7 @@ const props = defineProps(['data', 'itemStyle'])
   }
 }
 .status i {
-  color: var(--kungalgame-red-4);
+  color: var(--forum-red-4);
 }
 .time {
   display: flex;
@@ -143,6 +143,6 @@ const props = defineProps(['data', 'itemStyle'])
 }
 .time i {
   margin: 0 5px;
-  color: var(--kungalgame-purple-4);
+  color: var(--forum-purple-4);
 }
 </style>

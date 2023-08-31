@@ -1,46 +1,46 @@
-// KUNGalgame 设置面板的 store
+// Laoquant 设置面板的 store
 import { defineStore } from 'pinia'
 
 // 网站的默认设置
-import { KUNGalgameLanguage, mode } from '@/utils/getDefaultEnv'
+import { LQLanguage, mode } from '@/utils/getDefaultEnv'
 
 // 设置面板配置
-interface KUNGalgameSettings {
+interface LQSettings {
   // 白天黑夜模式切换
-  showKUNGalgameMode: string
+  showLQMode: string
   // 网站显示语言
-  showKUNGalgameLanguage: string
+  showLQLanguage: string
   // 主页宽度
-  showKUNGalgameMainPageWidth: string
+  showLQMainPageWidth: string
   // 背景图
-  showKUNGalgameBackground: string
+  showLQBackground: string
   // 自定义背景图
-  showKUNGalgameCustomBackground: string
+  showLQCustomBackground: string
 }
 
-export const useKUNGalgameSettingsStore = defineStore({
-  id: 'KUNGalgame-settings',
+export const useLQSettingsStore = defineStore({
+  id: 'forum-settings',
   persist: true,
   // 默认值
-  state: (): KUNGalgameSettings => ({
-    showKUNGalgameMode: mode,
-    showKUNGalgameLanguage: KUNGalgameLanguage,
-    showKUNGalgameMainPageWidth: '61.8',
-    showKUNGalgameBackground: 'none',
-    showKUNGalgameCustomBackground: '',
+  state: (): LQSettings => ({
+    showLQMode: mode,
+    showLQLanguage: LQLanguage,
+    showLQMainPageWidth: '61.8',
+    showLQBackground: 'none',
+    showLQCustomBackground: '',
   }),
   actions: {
     // 恢复出厂设置()
     restoreSettings() {
-      this.setKUNGalgameTheme('light')
-      this.showKUNGalgameLanguage = 'en'
-      this.showKUNGalgameMainPageWidth = '61.8'
-      this.showKUNGalgameBackground = 'none'
-      this.showKUNGalgameCustomBackground = ''
+      this.setTheme('light')
+      this.showLQLanguage = 'en'
+      this.showLQMainPageWidth = '61.8'
+      this.showLQBackground = 'none'
+      this.showLQCustomBackground = ''
     },
     // 设置主题，只有两种模式 light 和 dark，light 为 ''
-    setKUNGalgameTheme(theme: string) {
-      this.showKUNGalgameMode = theme
+    setTheme(theme: string) {
+      this.showLQMode = theme
       document.documentElement.className = theme
     },
   },

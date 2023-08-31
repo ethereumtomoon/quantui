@@ -5,10 +5,10 @@ import Aside from './components/Aside.vue'
 
 import { ref, onBeforeMount } from 'vue'
 import { getTopicRangeApi } from '@/api/topic/index'
-import { KUNGalgameTopic } from '@/api/topic/types/topic'
+import { Topic } from '@/api/topic/types/topic'
 
 // 在组件中定义响应式的话题数据
-const topics = ref<KUNGalgameTopic[]>([])
+const topics = [{topicId:"topicId"}]//ref<Topic[]>([])
 
 // 在组件挂载时调用 fetchTopics 获取话题数据
 onBeforeMount(async () => {
@@ -17,7 +17,7 @@ onBeforeMount(async () => {
     const count = 17 // 获取的话题数量
 
     // TODO: 这里接口获取到的数据太多了，其实获取 title，like，view，comment，text 这几个字段就足够了
-    topics.value = await getTopicRangeApi(start, count)
+    //topics.value = {}//await getTopicRangeApi(start, count)
   } catch (error) {
     console.error('Error fetching topics:', error)
   }
@@ -59,10 +59,10 @@ onBeforeMount(async () => {
   /* 水平垂直居中 */
   margin: 0 auto;
   display: flex;
-  background-color: var(--kungalgame-trans-white-5);
+  background-color: var(--forum-trans-white-5);
   /* 全局字体颜色 */
-  color: var(--kungalgame-font-color-3);
-  border: 1px solid var(--kungalgame-trans-blue-2);
+  color: var(--forum-font-color-3);
+  border: 1px solid var(--forum-trans-blue-2);
   border-radius: 5px;
 }
 /*

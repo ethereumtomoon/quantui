@@ -27,15 +27,15 @@
   height: 30px;
   width: 30px;
   margin-right: 10px;
-  border: 1px solid var(--kungalgame-blue-4);
-  background-color: var(--kungalgame-trans-blue-0);
+  border: 1px solid var(--forum-blue-4);
+  background-color: var(--forum-trans-blue-0);
 }
 .page-switch > button:hover {
-  background-color: var(--kungalgame-blue-4);
-  color: var(--kungalgame-white);
+  background-color: var(--forum-blue-4);
+  color: var(--forum-white);
 }
 .page-switch > button:active {
-  background-color: var(--kungalgame-blue-3);
+  background-color: var(--forum-blue-3);
 }
 /* 上一页和下一页两个按钮更宽 */
 .page-switch > button:first-child {

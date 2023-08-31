@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Tags from './Tags.vue'
-import KUNGalgameFooter from '@/components/KUNGalgameFooter.vue'
-import KUNGalgameSearchBox from '@/components/KUNGalgameSearchBox.vue'
+import Footer from '@/components/Footer.vue'
+import SearchBox from '@/components/SearchBox.vue'
 </script>
 
 <template>
@@ -12,18 +12,18 @@ import KUNGalgameSearchBox from '@/components/KUNGalgameSearchBox.vue'
       <div class="page-title">技术交流</div>
       <!-- 侧边的搜索框 -->
       <div class="search">
-        <KUNGalgameSearchBox style="height: 40px; width: 100%; border: none" />
+        <SearchBox style="height: 40px; width: 100%; border: none" />
       </div>
       <!-- 推荐标签 -->
       <div class="recommend">
-        <span>galgame 汉化相关</span>
-        <span>galgame 运行相关</span>
-        <span>galgame 制作相关</span>
+        <span>策略</span>
+        <span>行情讨论</span>
+        <span>其他</span>
       </div>
       <!-- 热门标签 -->
       <Tags />
       <!-- 版权 -->
-      <KUNGalgameFooter
+      <Footer
         style="
           position: absolute;
           bottom: 2%;
@@ -44,8 +44,8 @@ import KUNGalgameSearchBox from '@/components/KUNGalgameSearchBox.vue'
   /* 固定宽度 */
   width: 200px;
   height: 100%;
-  background-color: var(--kungalgame-trans-white-5);
-  border: 1px solid var(--kungalgame-trans-blue-4);
+  background-color: var(--forum-trans-white-5);
+  border: 1px solid var(--forum-trans-blue-4);
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -53,8 +53,8 @@ import KUNGalgameSearchBox from '@/components/KUNGalgameSearchBox.vue'
 .aside-container {
   height: 100%;
   background: linear-gradient(
-    var(--kungalgame-trans-blue-0),
-    var(--kungalgame-trans-pink-0)
+    var(--forum-trans-blue-0),
+    var(--forum-trans-pink-0)
   );
   display: flex;
   flex-direction: column;
@@ -70,13 +70,13 @@ import KUNGalgameSearchBox from '@/components/KUNGalgameSearchBox.vue'
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  color: var(--kungalgame-blue-3);
+  color: var(--forum-blue-3);
   font-style: italic;
-  text-shadow: 1px 1px 3px var(--kungalgame-red-4);
+  text-shadow: 1px 1px 3px var(--forum-red-4);
 }
 /* 侧边搜索框 */
 .search {
-  background-color: var(--kungalgame-trans-blue-2);
+  background-color: var(--forum-trans-blue-2);
   display: flex;
   box-sizing: border-box;
 }
@@ -93,10 +93,10 @@ import KUNGalgameSearchBox from '@/components/KUNGalgameSearchBox.vue'
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid var(--kungalgame-trans-blue-4);
+  border-bottom: 1px solid var(--forum-trans-blue-4);
   cursor: pointer;
 }
 .recommend span:hover {
-  background-color: var(--kungalgame-trans-red-2);
+  background-color: var(--forum-trans-red-2);
 }
 </style>

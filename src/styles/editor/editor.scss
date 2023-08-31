@@ -1,0 +1,49 @@
+/* wangEditor5 使用了 Shadow DOM，不能直接修改颜色，在全局覆盖 */
+
+.w-e-scroll {
+  &::-webkit-scrollbar {
+    display: inline;
+    width: 6px;
+    height: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--forum-blue-4);
+    border-radius: 3px;
+  }
+}
+
+s {
+  text-decoration: line-through;
+}
+
+* {
+  text-shadow: none;
+}
+
+:root {
+  // textarea - css vars
+  --w-e-textarea-bg-color: var(--forum-white);
+  --w-e-textarea-color: var(--forum-font-color-3);
+  --w-e-textarea-border-color: var(--forum-blue-1);
+  --w-e-textarea-slight-border-color: var(--forum-white);
+  --w-e-textarea-slight-color: var(--forum-white);
+  --w-e-textarea-slight-bg-color: var(--forum-white);
+  --w-e-textarea-selected-border-color: var(
+    --forum-blue-1
+  ); // 选中的元素，如选中了分割线
+  --w-e-textarea-handler-bg-color: var(
+    --forum-blue-4
+  ); // 工具，如图片拖拽按钮
+
+  // toolbar - css vars
+  --w-e-toolbar-color: var(--forum-font-color-1);
+  --w-e-toolbar-bg-color: var(--forum-white);
+  --w-e-toolbar-active-color: var(--forum-font-color-3);
+  --w-e-toolbar-active-bg-color: var(--forum-white);
+  --w-e-toolbar-disabled-color: var(--forum-red-4);
+  --w-e-toolbar-border-color: var(--forum-blue-4);
+
+  // modal - css vars
+  --w-e-modal-button-bg-color: var(--forum-white);
+  --w-e-modal-button-border-color: var(--forum-blue-4);
+}

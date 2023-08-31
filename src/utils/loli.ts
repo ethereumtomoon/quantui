@@ -1,4 +1,4 @@
-/* KUNGalgame 全局看板娘数据的读取文件 */
+/* Laoquant 全局看板娘数据的读取文件 */
 
 // 读取 JSON 文件数据
 import loliData from '@/assets/images/ren/ren.json'

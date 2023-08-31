@@ -7,11 +7,11 @@ import '@/styles/editor/editor.scss'
 import { IDomEditor } from '@wangeditor/editor'
 import { onBeforeUnmount, ref, shallowRef, onMounted } from 'vue'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
-import { useKUNGalgameEditStore } from './store/modules/edit'
+import { useEditStore } from '@/store/modules/edit'
 
 import { storeToRefs } from 'pinia'
 
-const topicData = storeToRefs(useKUNGalgameEditStore())
+//const topicData = storeToRefs(useEditStore())
 
 const props = defineProps(['height', 'isShowToolbar', 'isShowAdvance'])
 
@@ -84,7 +84,7 @@ const handleChange = (editor: IDomEditor) => {
 /* 编辑器的样式 */
 .editor—wrapper {
   /* 编辑器的 border */
-  border: 1px solid var(--kungalgame-blue-4);
+  border: 1px solid var(--forum-blue-4);
   box-sizing: border-box;
   /* 编辑器的宽度 */
   width: 100%;
@@ -92,6 +92,12 @@ const handleChange = (editor: IDomEditor) => {
   z-index: 1008; /* 按需定义 */
 }
 .toolbar-container {
-  border-bottom: 1px solid var(--kungalgame-blue-4);
+  border-bottom: 1px solid var(--forum-blue-4);
+}
+.strong{
+  font-weight: "bold";
+}
+.u{
+  text-decoration: "underline";
 }
 </style>

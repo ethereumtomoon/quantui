@@ -9,27 +9,27 @@ interface topic {
 export const asideTopic: topic[] = [
   {
     index: 1,
-    name: '啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星',
+    name: 'texttexttexttexttexttexttexttexttexttext',
     router: '/topic',
   },
   {
     index: 2,
-    name: '啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星',
+    name: 'texttexttexttexttexttexttexttexttexttext',
     router: '/topic',
   },
   {
     index: 3,
-    name: '啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星',
+    name: 'texttexttexttexttexttexttexttexttexttext',
     router: '/topic',
   },
   {
     index: 4,
-    name: '啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星',
+    name: 'texttexttexttexttexttexttexttexttexttext',
     router: '/topic',
   },
   {
     index: 5,
-    name: '啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星',
+    name: 'texttexttexttexttexttexttexttexttexttext',
     router: '/topic',
   },
 ]

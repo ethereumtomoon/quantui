@@ -16,7 +16,7 @@ const singleTopic: topic[] = [
     router: '/topic',
     data: {
       title:
-        '啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星',
+        'texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext',
       value: 1007,
       time: '1小时前',
     },
@@ -25,7 +25,7 @@ const singleTopic: topic[] = [
     index: 2,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '10小时前',
     },
@@ -34,7 +34,7 @@ const singleTopic: topic[] = [
     index: 3,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '1天前',
     },
@@ -43,7 +43,7 @@ const singleTopic: topic[] = [
     index: 4,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '1小时前',
     },
@@ -52,7 +52,7 @@ const singleTopic: topic[] = [
     index: 5,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '1小时前',
     },
@@ -61,7 +61,7 @@ const singleTopic: topic[] = [
     index: 6,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '1小时前',
     },
@@ -70,7 +70,7 @@ const singleTopic: topic[] = [
     index: 7,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '1小时前',
     },
@@ -79,7 +79,7 @@ const singleTopic: topic[] = [
     index: 8,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '1小时前',
     },
@@ -88,7 +88,7 @@ const singleTopic: topic[] = [
     index: 9,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '1小时前',
     },
@@ -97,7 +97,7 @@ const singleTopic: topic[] = [
     index: 10,
     router: '/topic',
     data: {
-      title: '啊这可海星',
+      title: 'text',
       value: 1007,
       time: '1小时前',
     },

@@ -25,7 +25,7 @@ export const historyVersion: history[] = [
       },
       {
         index: 3,
-        text: '3. 啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星啊这可海星',
+        text: '3. texttexttexttexttexttexttexttext',
       },
     ],
     time: '2019/10/7',

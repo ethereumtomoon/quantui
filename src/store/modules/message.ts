@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { createPinia, defineStore } from 'pinia'
 
 interface Message {
   // 是否展示通知消息
@@ -15,8 +15,8 @@ interface Message {
   confirm: boolean
 }
 
-export const useKUNGalgameMessageStore = defineStore({
-  id: 'message',
+export const useMessageStore = defineStore({
+  id: 'messageStore',
   persist: false,
   state: (): Message => ({
     showInfo: false,

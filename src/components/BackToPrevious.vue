@@ -17,11 +17,11 @@ const router = useRouter()
   position: absolute;
   bottom: 1%;
   left: 2%;
-  color: var(--kungalgame-font-color-0);
+  color: var(--forum-font-color-0);
   cursor: pointer;
 }
 
 .return:hover {
-  color: var(--kungalgame-blue-4);
+  color: var(--forum-blue-4);
 }
 </style>

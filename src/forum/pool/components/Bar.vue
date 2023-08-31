@@ -49,15 +49,15 @@ import { Icon } from '@iconify/vue'
   right: 51px;
   cursor: pointer;
   display: none;
-  background-color: var(--kungalgame-trans-white-2);
-  border: 1px solid var(--kungalgame-blue-1);
+  background-color: var(--forum-trans-white-2);
+  border: 1px solid var(--forum-blue-1);
   top: 0;
 }
 .func > div {
   padding: 8px;
 }
 .func > div:hover {
-  background-color: var(--kungalgame-trans-pink-1);
+  background-color: var(--forum-trans-pink-1);
 }
 /* 排序 hover 出现 */
 .sort:hover .func {
@@ -66,7 +66,7 @@ import { Icon } from '@iconify/vue'
 /* 图标字体的颜色 */
 .func i {
   margin-right: 10px;
-  color: var(--kungalgame-red-4);
+  //color: var(--forum-red-4);
 }
 /* 最后一个排序的样式 */
 .func div:last-child i {
@@ -80,11 +80,11 @@ import { Icon } from '@iconify/vue'
   align-items: center;
   height: 50px;
   padding: 0 9px;
-  box-shadow: var(--shadow);
+  //box-shadow: var(--shadow);
   cursor: pointer;
-  background-color: var(--kungalgame-trans-white-2);
-  border: 1px solid var(--kungalgame-blue-1);
-  color: var(--kungalgame-font-color-3);
+  //background-color: var(--forum-trans-white-2);
+  //border: 1px solid var(--forum-blue-1);
+  //color: var(--forum-font-color-3);
 }
 .top {
   margin-top: 11px;
@@ -92,6 +92,6 @@ import { Icon } from '@iconify/vue'
 .sort i,
 .top i {
   margin-top: 5px;
-  color: var(--kungalgame-red-4);
+  //color: var(--forum-red-4);
 }
 </style>

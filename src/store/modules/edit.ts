@@ -1,10 +1,10 @@
 /* 编辑区的 store */
 import { defineStore } from 'pinia'
-import { createNewTopicApi } from '@/api/edit/index'
+/*import { createNewTopicApi } from '@/api/edit/index'
 import {
   CreateTopicRequestData,
   CreateTopicResponseData,
-} from '@/api/edit/types/edit'
+} from '@/api/edit/types/edit'*/
 
 interface Topic {
   // 话题标题
@@ -17,7 +17,7 @@ interface Topic {
   category: Array<string>
 }
 
-export const useKUNGalgameEditStore = defineStore({
+export const useEditStore = defineStore({
   id: 'edit',
   persist: true,
   state: (): Topic => ({
@@ -48,7 +48,7 @@ export const useKUNGalgameEditStore = defineStore({
       this.category = []
     },
     // 创建话题
-    createNewTopic(
+    /*createNewTopic(
       createTopicRequestData: CreateTopicRequestData
     ): Promise<CreateTopicResponseData> {
       return new Promise((resolve, reject) => {
@@ -60,6 +60,6 @@ export const useKUNGalgameEditStore = defineStore({
             reject(error)
           })
       })
-    },
+    },*/
   },
 })

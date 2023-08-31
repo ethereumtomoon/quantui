@@ -29,7 +29,7 @@ var url = "http://101.34.239.153:8118/backtest/"+r+"/"+id;
 var data = {'userId':"e063bb16cc76558b9f94afe212747cda"};  
 var xhr = new XMLHttpRequest();  
 xhr.open("POST", url, true);  
-xhr.setRequestHeader("token", "19b05dd61f1c46e78667955ee016b7f4");  
+xhr.setRequestHeader("token", "3db8bcd501c44a35b516a7fac6016903");  
 xhr.setRequestHeader("Access-Control-Allow-Origin","*")
 //xhr.send(JSON.stringify(data));  
 xhr.send(data)
