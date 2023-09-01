@@ -53,15 +53,15 @@ const handleConfirm = () => {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   transition: opacity 0.3s ease;
-  color: var(--kungalgame-font-color-3);
+  color: var(--forum-font-color-3);
 }
 
 .container {
   width: 300px;
   margin: auto;
   padding: 20px 30px;
-  background-color: var(--kungalgame-trans-white-2);
-  border: 1px solid var(--kungalgame-blue-1);
+  background-color: var(--forum-trans-white-2);
+  border: 1px solid var(--forum-blue-1);
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
@@ -76,16 +76,16 @@ const handleConfirm = () => {
 .button {
   width: 70px;
   height: 30px;
-  color: var(--kungalgame-font-color-3);
+  color: var(--forum-font-color-3);
   cursor: pointer;
   &:nth-child(1) {
-    background-color: var(--kungalgame-trans-blue-1);
-    border: 1px solid var(--kungalgame-blue-4);
+    background-color: var(--forum-trans-blue-1);
+    border: 1px solid var(--forum-blue-4);
   }
   &:nth-child(2) {
     margin-left: 98px;
-    background-color: var(--kungalgame-trans-red-1);
-    border: 1px solid var(--kungalgame-red-4);
+    background-color: var(--forum-trans-red-1);
+    border: 1px solid var(--forum-red-4);
   }
   &:active {
     transform: scale(0.9);

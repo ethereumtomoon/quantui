@@ -57,11 +57,11 @@ const handleClose = () => {
 .container {
   min-height: 120px;
   width: 100%;
-  color: var(--kungalgame-font-color-3);
-  background-color: var(--kungalgame-trans-white-5);
+  color: var(--forum-font-color-3);
+  background-color: var(--forum-trans-white-5);
   backdrop-filter: blur(2px);
   box-shadow: var(--shadow);
-  border-top: 1px solid var(--kungalgame-blue-1);
+  border-top: 1px solid var(--forum-blue-1);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -76,11 +76,11 @@ const handleClose = () => {
   padding-left: 150px;
   border-bottom: none;
   /* 这里的阴影只能这么绘制 */
-  filter: drop-shadow(2px 4px 3px var(--kungalgame-trans-blue-4));
+  filter: drop-shadow(2px 4px 3px var(--forum-trans-blue-4));
   span {
     padding: 0 50px;
     text-align: center;
-    background-color: var(--kungalgame-trans-white-2);
+    background-color: var(--forum-trans-white-2);
     font-size: 24px;
     /* 这里将人物名字的形状裁剪成六边形 */
     clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0 50%);
@@ -99,20 +99,20 @@ const handleClose = () => {
   margin-left: 150px;
   margin-right: 50px;
   font-size: 20px;
-  color: var(--kungalgame-white);
-  text-shadow: 0 1px var(--kungalgame-font-color-3),
-    1px 0 var(--kungalgame-font-color-3), -1px 0 var(--kungalgame-font-color-3),
-    0 -1px var(--kungalgame-font-color-3),
-    1px 2px var(--kungalgame-font-color-3),
-    1px 2px var(--kungalgame-font-color-3),
-    1px 2px var(--kungalgame-font-color-3),
-    1px 2px var(--kungalgame-font-color-3);
+  color: var(--forum-white);
+  text-shadow: 0 1px var(--forum-font-color-3),
+    1px 0 var(--forum-font-color-3), -1px 0 var(--forum-font-color-3),
+    0 -1px var(--forum-font-color-3),
+    1px 2px var(--forum-font-color-3),
+    1px 2px var(--forum-font-color-3),
+    1px 2px var(--forum-font-color-3),
+    1px 2px var(--forum-font-color-3);
 }
 .close {
   font-size: 30px;
   position: absolute;
   top: 0;
   right: 0;
-  color: var(--kungalgame-font-color-1);
+  color: var(--forum-font-color-1);
 }
 </style>
