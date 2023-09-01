@@ -3,6 +3,9 @@
  -->
 <script setup lang="ts">
 import SingleComment from './SingleComment.vue'
+const props = defineProps(["data"])
+const comments=props.data
+console.log(comments)
 </script>
 
 <template>
@@ -14,9 +17,9 @@ import SingleComment from './SingleComment.vue'
     </div>
     <!-- 评论容器 -->
     <div class="container">
-      <SingleComment />
-      <SingleComment />
-      <SingleComment />
+      <template v-for="comment in comments">
+      <SingleComment :data="comment"/>
+    </template>
     </div>
   </div>
 </template>

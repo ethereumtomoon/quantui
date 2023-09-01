@@ -1,6 +1,8 @@
 <!-- 把所有话题的所有 Tag 组合起来形成的一个区域 -->
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+const props = defineProps(["data"])
+const tags=props.data
 </script>
 
 <template>
@@ -9,11 +11,9 @@ import { Icon } from '@iconify/vue'
     <!-- 标签的图标字体 -->
     <Icon class="tag" icon="mingcute:tag-2-fill" />
     <ul>
-      <li>tag</li>
-      <li>tag</li>
-      <li>tag</li>
-      <li>tag</li>
-      <li>tag</li>
+      <template v-for="tag in tags">
+      <li>{{tag}}</li>
+    </template>
     </ul>
   </div>
 </template>

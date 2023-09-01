@@ -11,7 +11,7 @@
     </div>
     <!-- 楼主的名字 -->
     <div class="master-name">name</div>
-    <!-- 楼主的萌萌点 -->
+    <!-- 楼主的积分 -->
     <div class="master-points">1007</div>
   </div>
 </template>
@@ -41,7 +41,7 @@
   justify-content: center;
   margin-top: 17px;
 }
-/* 楼主的萌萌点 */
+/* 楼主的积分 */
 .master-points {
   margin-top: 10px;
   display: flex;

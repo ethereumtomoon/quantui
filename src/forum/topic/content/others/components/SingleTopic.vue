@@ -22,6 +22,8 @@ import Rewrite from '../../components/Rewrite.vue'
 import Userinfo from '../../components/Userinfo.vue'
 // 导入回复人,被回复人
 import Reply from './Reply.vue'
+const props = defineProps(["data"])
+const reply=props.data
 </script>
 
 <template>
@@ -41,21 +43,21 @@ import Reply from './Reply.vue'
           <div class="top">
             <Reply />
             <!-- 上部区域的右边 -->
-            <Rewrite />
+            <Rewrite :data="reply.lastedittime"/>
           </div>
           <!-- 右侧部分分文本 -->
-          <TopicContent />
+          <TopicContent :data="reply.content"/>
         </div>
       </div>
       <!-- 其他人回复的下部 -->
       <div class="bottom">
-        <Tags />
-        <Time />
+        <Tags :data="reply.tags"/>
+        <Time :data="reply.time"/>
       </div>
     </div>
     <!-- 其它人回复的底部 -->
     <TopicFooter :isOthersTopic="true" />
-    <Comments />
+    <Comments :data="reply.comments"/>
   </div>
 </template>
 

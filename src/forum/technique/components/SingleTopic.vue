@@ -2,7 +2,7 @@
 import { Icon } from '@iconify/vue'
 
 const props = defineProps(['data'])
-
+props.data.click++
 // TODO: 后端接口字段名还未定，不能确定
 </script>
 
@@ -26,7 +26,7 @@ const props = defineProps(['data'])
       <!-- 话题的点击数 -->
       <div class="view"><Icon icon="ic:outline-remove-red-eye" />{{props.data.click}}</div>
       <!-- 话题的点赞数 -->
-      <div class="like"><Icon icon="line-md:thumbs-up-twotone" />{{props.data.likes}}</div>
+      <div class="like"><Icon icon="line-md:thumbs-up-twotone" @click="props.data.likes++"/>{{props.data.likes}}</div>
       <!-- 话题的回复数 -->
       <div class="reply"><Icon icon="fa-regular:comment-dots" />{{props.data.reply}}</div>
     </div>

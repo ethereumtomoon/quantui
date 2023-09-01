@@ -1,6 +1,7 @@
 <!-- 发帖的时间 -->
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+const props = defineProps(["data"])
 </script>
 
 <template>
@@ -8,7 +9,7 @@ import { Icon } from '@iconify/vue'
   <div class="time">
     <!-- 沙漏图标字体 -->
     <Icon class="hourglass" icon="eos-icons:hourglass" />
-    <div>2019年10月7日-10:07:00 发布</div>
+    <div>{{ props.data }} 发布</div>
   </div>
 </template>
 

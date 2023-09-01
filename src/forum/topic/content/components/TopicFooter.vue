@@ -35,7 +35,7 @@ const handelReply = () => {
         </li>
         <!-- 点赞 -->
         <li>
-          <span class="icon"><Icon icon="line-md:thumbs-up-twotone" /></span>
+          <span class="icon"><Icon icon="line-md:thumbs-up-twotone"  @click="props.data.likes++"/></span>
           1007
         </li>
         <!-- 踩 -->

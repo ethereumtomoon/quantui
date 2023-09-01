@@ -5,15 +5,19 @@
  -->
 <script setup lang="ts">
 import SingleTopic from './components/SingleTopic.vue'
+const props = defineProps(["data"])
+const replys=props.data
+console.log(replys)
 </script>
 
 <template>
   <!-- 其它人的回复 -->
   <div class="other-topic-container">
     <!-- 每个人的单个话题 -->
-    <SingleTopic />
-    <SingleTopic />
-    <SingleTopic />
+    <template v-for="reply in replys">
+    <SingleTopic :data="reply"/>
+  </template>
+
   </div>
 </template>
 

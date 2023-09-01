@@ -20,6 +20,9 @@ import Tags from '../components/Tags.vue'
 import TopicHeader from '../components/TopicHeader.vue'
 // 楼主标志
 import Floor from '../components/Floor.vue'
+//import { topic } from '@/forum/pool/components/topic'
+const props = defineProps(["data"])
+const tp=props.data
 </script>
 
 <template>
@@ -34,12 +37,12 @@ import Floor from '../components/Floor.vue'
         <!-- 内容区的顶部 -->
         <div class="content-top">
           <Tags />
-          <Time />
+          <Time :data="tp.time"/>
         </div>
         <!-- 内容区的中部 -->
         <div class="content-center">
           <Userinfo />
-          <TopicContent />
+          <TopicContent :data="tp.content"/>
         </div>
         <!-- 内容区的底部 -->
         <div class="content-bottom">
@@ -47,7 +50,7 @@ import Floor from '../components/Floor.vue'
           <Rewrite />
         </div>
       </div>
-      <TopicFooter />
+      <TopicFooter :data="tp"/>
     </div>
   </div>
 </template>

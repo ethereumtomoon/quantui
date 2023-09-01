@@ -1,22 +1,12 @@
 <!-- 这是话题的内容区 -->
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps(["data"])
+</script>
 
 <template>
   <!-- 内容区右侧的话题展示区 -->
   <div class="text">
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
-    texttexttexttexttexttexttexttexttexttext
+    {{ props.data }}
   </div>
 </template>
 

@@ -6,6 +6,9 @@
   -->
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+const props = defineProps(["data"])
+const comment=props.data
+console.log(comment)
 </script>
 
 <template>
@@ -17,7 +20,7 @@ import { Icon } from '@iconify/vue'
       <!-- 单个评论内容区顶部 -->
       <div class="describe">
         <!-- 顶部左侧名字 -->
-        <div class="name">锟评论 @<a href="#">textext</a></div>
+        <div class="name">{{comment.username}}评论 @<a href="#"></a></div>
         <!-- 顶部右侧点赞、踩 -->
         <div class="operate">
           <ul>
@@ -37,8 +40,7 @@ import { Icon } from '@iconify/vue'
       </div>
       <!-- 单个评论内容区底部 -->
       <div class="text">
-        texttexttexttexttexttexttexttexttexttext
-        texttexttexttexttexttexttexttexttexttext
+        {{comment.text}}
       </div>
     </div>
   </div>
