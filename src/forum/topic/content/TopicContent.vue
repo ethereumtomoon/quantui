@@ -46,6 +46,7 @@ let topic={
     }]}
   ]
   }
+  console.log(topic)
 </script>
 <template>
   <div class="content-right-part">
@@ -59,7 +60,7 @@ let topic={
   height: 100%;
   width: 1px;
   flex-grow: 4;
-  /* 右侧内容区为弹性盒（用户可以一直向下滑） */
+  /* 右侧内容区为弹性盒（用户可以一直向下滑） */ 
   display: flex;
   flex-direction: column;
 }
